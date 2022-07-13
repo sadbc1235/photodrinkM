@@ -107,7 +107,7 @@ header h1 {
 }
 .contentBoxWrapp .contentWrappInner .boothBtnBox {
   position: absolute;
-  top: 73vh;
+  top: 72vh;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -150,7 +150,7 @@ header h1 {
 
 footer {
   position: absolute;
-  bottom: 10px;
+  top: 93.5vh;
   left: 0;
   width: 100%;
   padding-top: 5%;
