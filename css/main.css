@@ -1,0 +1,155 @@
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: #020202;
+  box-shadow: inset 0px -2px 1px #333;
+}
+header h1 {
+  width: 100%;
+  font-size: 5vh;
+  text-align: center;
+  color: #c92933;
+}
+
+.contentBoxWrapp {
+  width: 100%;
+  height: 90vh;
+  min-height: calc(740px - 10vh);
+  background-color: #020202;
+  padding: 5%;
+  perspective: 300px;
+}
+.contentBoxWrapp .contentWrappInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.contentBoxWrapp .contentWrappInner .boothBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  transform-style: preserve-3d;
+  transition: 0.45s all;
+}
+.contentBoxWrapp .contentWrappInner .boothBox.left {
+  transform: rotateY(-75deg) translateX(-130%);
+}
+.contentBoxWrapp .contentWrappInner .boothBox.right {
+  transform: rotateY(75deg) translateX(130%);
+}
+.contentBoxWrapp .contentWrappInner .boothBox.active {
+  opacity: 1;
+  display: block;
+}
+.contentBoxWrapp .contentWrappInner .boothBox .boothNameBox {
+  width: 70%;
+  padding-bottom: 5%;
+}
+.contentBoxWrapp .contentWrappInner .boothBox .boothNameBox .boothName {
+  font-size: 9vw;
+  text-shadow: 0px 0px 10px #c92933;
+  color: #fff;
+}
+.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  border-radius: 0 0 40px 0;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.13);
+}
+.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox .conceptBtn {
+  position: absolute;
+  right: 0.1%;
+  top: -10%;
+  width: 30%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c92933;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  color: #c92933;
+  text-shadow: 1px 1px 3px #c92933;
+  font-size: 5vw;
+}
+.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 40px 0;
+  filter: saturate(1.5);
+}
+.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox .boothExplain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3%;
+  background: rgba(2, 2, 2, 0.5215686275);
+  border-radius: 25px 0 40px 0;
+  font-size: 4.6vw;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox {
+  position: absolute;
+  top: 78%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: rgba(204, 204, 204, 0.74);
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames .nameInner {
+  font-size: 4.5vw;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames .nameInner:nth-of-type(2) {
+  margin-left: 15%;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames .nameInner .itemName {
+  padding-top: 5%;
+  transition: 0.3s all;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames .nameInner .itemName.active {
+  color: #c92933;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothBtn {
+  width: 10%;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothBtn .arrowTop,
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothBtn .arrowBottom {
+  width: 2px;
+  height: 50%;
+  background-color: #c92933;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothBtn .arrowTop {
+  transform: rotate(-45deg) translateY(25%);
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox .boothBtn .arrowBottom {
+  transform: rotate(45deg) translateY(-25%);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+  color: rgba(204, 204, 204, 0.74);
+  font-size: 3vw;
+}
+
+/*# sourceMappingURL=main.css.map */
