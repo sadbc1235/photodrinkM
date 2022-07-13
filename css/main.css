@@ -50,6 +50,7 @@ header h1 {
 .contentBoxWrapp .contentWrappInner .boothBox .boothNameBox {
   width: 70%;
   padding-bottom: 5%;
+  transition: 0.4s all;
 }
 .contentBoxWrapp .contentWrappInner .boothBox .boothNameBox .boothName {
   font-size: 9vw;
@@ -78,6 +79,7 @@ header h1 {
   color: #c92933;
   text-shadow: 1px 1px 3px #c92933;
   font-size: 5vw;
+  transition: 0.4s all;
 }
 .contentBoxWrapp .contentWrappInner .boothBox .boothImgBox img {
   width: 100%;
@@ -97,6 +99,7 @@ header h1 {
   font-size: 5.5vw;
   color: #fff;
   letter-spacing: 1px;
+  transition: 0.4s all;
 }
 .contentBoxWrapp .contentWrappInner .boothBtnBox {
   position: absolute;
