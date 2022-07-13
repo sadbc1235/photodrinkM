@@ -111,6 +111,11 @@ header {
           color: #fff;
           letter-spacing: 1px;
           transition: .4s all;
+
+          span {
+            font-weight: bold;
+            text-shadow: 1px 1px 3px #c92933;
+          }
         }
 
       }

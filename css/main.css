@@ -101,6 +101,10 @@ header h1 {
   letter-spacing: 1px;
   transition: 0.4s all;
 }
+.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox .boothExplain span {
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #c92933;
+}
 .contentBoxWrapp .contentWrappInner .boothBtnBox {
   position: absolute;
   top: 70vh;
