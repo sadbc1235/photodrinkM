@@ -60,3 +60,52 @@ boothBtn.addEventListener("click", () => {
     }, 500);
 
 })
+
+// if click booth name effect
+
+for(let i=0; i<itemNames.length; i++) {
+  itemNames[i].addEventListener("click", () => {
+
+    let currentBooth = boothBoxWrapp.querySelector(".active");
+    let currentName = boothNames.querySelector(".active");
+    let nextIndex = parseInt(itemNames[i].getAttribute("data-index"));;
+  
+    for(let i=0; i<boothLen; i++) {
+      boothBoxs[i].style.display = "block";
+      boothNameBoxs[i].style.opacity = 0;
+      conceptBtns[i].style.opacity = 0;
+      boothExplains[i].style.opacity = 0;
+    }
+  
+      setTimeout(() => {
+        currentBooth.classList.add("left");
+        currentBooth.classList.remove("active");
+        currentName.classList.remove("active");
+        boothBoxs[nextIndex].classList.add("right");
+  
+        setTimeout(() => {
+          boothBoxs[nextIndex].classList.add("active");
+          itemNames[nextIndex].classList.add("active");
+          boothBoxs[nextIndex].classList.remove("right");
+          currentBooth.classList.remove("left");
+  
+          for(let i=0; i<boothLen; i++) {
+            if (i !== nextIndex) {
+              boothBoxs[i].style.display = "none";
+            }
+          }
+  
+          setTimeout(() => {
+            for(let i=0; i<boothLen; i++) {
+              boothNameBoxs[i].style.opacity = 1;
+              conceptBtns[i].style.opacity = 1;
+              boothExplains[i].style.opacity = 1;
+            }
+          }, 600)
+  
+        }, 500)
+  
+      }, 500);
+  
+  })
+}
