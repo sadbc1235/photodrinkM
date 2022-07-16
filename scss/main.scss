@@ -29,92 +29,356 @@ header {
     position: relative;
     overflow: hidden;
 
-    .boothBox {
-      position: absolute;
-      top:0;
-      left:0;
-      width: 100%;
-      display: none;
-      opacity: 0;
-      transform-style: preserve-3d;
-      transition: .45s all;
-
-      &.left {
-        transform: rotateY(-75deg) translateX(-130%);
-      }
-
-      &.right {
-        transform: rotateY(75deg) translateX(130%);
-      }
+    .boothBoxWrapp {
+      transition: .3s all;
 
       &.active {
-        opacity: 1;
-        display: block;
+        opacity: 0;
+        transform: scale(.5);
       }
 
-      .boothNameBox {
-        width: 70%;
-        padding-bottom: 5%;
+      .boothBox {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+        transform-style: preserve-3d;
+        transition: .45s all;
+  
+        &.left {
+          transform: rotateY(-75deg) translateX(-130%);
+        }
+  
+        &.right {
+          transform: rotateY(75deg) translateX(130%);
+        }
+  
+        &.active {
+          opacity: 1;
+          display: block;
+        }
+  
+        .boothNameBox {
+          width: 70%;
+          padding-bottom: 5%;
+          transition: .4s all;
+  
+          .boothName {
+            font-size: 9vw;
+            text-shadow: 0px 0px 10px #c92933;
+            color: #fff;
+          }
+  
+        }
+  
+        .boothImgBox {
+          position:relative;
+          width: 100%;
+          height: 60vh;
+          border-radius: 0 0 40px 0;
+          // overflow: hidden;
+          box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.13);
+  
+          .conceptBtn {
+            position: absolute;
+            right: .1%;
+            top: -10%;
+            width: 30%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #c92933;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            color: #c92933;
+            text-shadow: 1px 1px 3px #c92933;
+            font-size: 5vw;
+            transition: .4s all;
+          }
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 0 40px 0;
+            filter: saturate(1.5);
+          }
+  
+          .boothExplain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3%;
+            background: #02020285;
+            border-radius: 25px 0 40px 0;
+            font-size: 5.5vw;
+            color: #fff;
+            letter-spacing: 1px;
+            transition: .4s all;
+  
+            span {
+              font-weight: bold;
+              text-shadow: 1px 1px 3px #c92933;
+            }
+          }
+  
+        }
+  
+      }
+    }
+
+    .conceptBoxWrapp {
+      height: 100%;
+      perspective: 400px;
+
+      &.active {
+        opacity: 0;
+        transform: scale(.5);
+      }
+
+      .conceptBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform-style: preserve-3d;
+        z-index: 1;
         transition: .4s all;
 
-        .boothName {
-          font-size: 9vw;
-          text-shadow: 0px 0px 10px #c92933;
-          color: #fff;
+        &.up {
+          transform: rotateX(25deg) translateY(-60%);
         }
+
+        &.down {
+          transform: rotateX(-25deg) translateY(60%);
+        }
+
+        &.active {
+          opacity: 1;
+          z-index: 2;
+        }
+
+        .itemConcept {
+          width: 100%;
+          .conceptName {
+            width: 70%;
+            padding-bottom: 5%;
+            transition: .4s all;
+    
+            h2 {
+              font-size: 9vw;
+              text-shadow: 0px 0px 10px #c92933;
+              color: #fff;
+            }
+    
+          }
+
+          .conceptImg {
+            position: relative;
+            width: 80%;
+            height: 60vh;
+            border-radius: 0 0 40px 0;
+            box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.178);
+
+            .backBtn {
+              position: absolute;
+              right: 5%;
+              top: -8%;
+              width: 30%;
+              height: 8%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 2px solid #c92933;
+              border-bottom: none;
+              border-radius: 10px 10px 0 0;
+              color: #c92933;
+              text-shadow: 1px 1px 3px #c92933;
+              font-size: 5vw;
+              transition: .4s all;
+            }
+
+            .sampleBox {
+              position: absolute;
+              bottom: 5%;
+              right: 0;
+              width: 25%;
+              height: 90%;
+              transition: .3s all;
+
+              &.active {
+                right: -27%;
+              }
+
+              ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 100%;
+                height: 100%;
+
+                .itemSample {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  width: 100%;
+                  height: 20%;
+
+                  &:nth-of-type(1) {
+                    .circle {
+                      box-shadow: 1px 1px 4px rgba(166,140,186,1);
+                      background: linear-gradient(43deg, rgba(32,165,105,1) 40%, rgba(166,140,186,1) 60%);
+                    }
+                  }
+                  &:nth-of-type(2) {
+                    .circle {
+                      box-shadow: 1px 1px 4px rgb(21,137,87);
+                      background: linear-gradient(43deg, rgba(21,137,87,1) 40%, rgba(197,130,108,1) 60%);
+                    }
+                  }
+                  &:nth-of-type(3) {
+                    .circle {
+                      box-shadow: 1px 1px 4px rgb(206,96,160);
+                      background: linear-gradient(43deg, rgba(206,96,160,1) 40%, rgba(204,175,179,1) 60%);
+                    }
+                  }
+                  &:nth-of-type(4) {
+                    .circle {
+                      box-shadow: 1px 1px 4px rgb(172,139,162);
+                      background: linear-gradient(43deg, rgba(172,139,162,1) 40%, rgba(21,177,227,1) 60%);
+                    }
+                  }
+                  &:nth-of-type(5) {
+                    .circle {
+                      box-shadow: 1px 1px 4px rgb(224,104,76);
+                      background: linear-gradient(43deg, rgba(224,104,76,1) 40%, rgba(118,159,57,1) 60%);
+                    }
+                  }
+
+                  $circleSize: 13vw;
+                  .circle {
+                    width: $circleSize;
+                    height: $circleSize;
+                    border-radius: 50%;
+                  }
+
+                  .sampleName {
+                    margin-top: 10%;
+                    color: #fff;
+                    font-size: 4vw;
+                    transition: .4s all;
+
+                    &.active {
+                      text-shadow: 1px 1px 5px #c92933;
+                    }
+                  }
+
+                }
+              }
+            }
+  
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 0;
+              border-radius: 0 0 40px 0;
+              transition: .45s all;
+  
+              &.active {
+                opacity: 1;
+              }
+            }
+          }
+
+          .conceptExplain {
+            position: absolute;
+            top: 70vh;
+            left: 0;
+            width: 80%;
+            font-size: 4.5vw;
+            color: #fff;
+            letter-spacing: 1px;
+          }
+
+        }
+        
+        
 
       }
 
-      .boothImgBox {
-        position:relative;
-        width: 100%;
-        height: 60vh;
-        border-radius: 0 0 40px 0;
-        // overflow: hidden;
-        box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.13);
+      .conceptSwitchBtnBox {
+        position: absolute;
+        top: 0;
+        right: -1.5%;
+        width: 20%;
+        height: 100%;
+        padding: 5% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-        .conceptBtn {
-          position: absolute;
-          right: .1%;
-          top: -10%;
-          width: 30%;
-          height: 10%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 2px solid #c92933;
-          border-bottom: none;
-          border-radius: 10px 10px 0 0;
-          color: #c92933;
-          text-shadow: 1px 1px 3px #c92933;
-          font-size: 5vw;
-          transition: .4s all;
+        .upArrow,
+        .downArrow {
+          width: 100%;
+          height: 100px;
+          z-index: 3;
+
+          .arrowWrapp {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+
+            .leftBar,
+            .rightBar {
+              width: 50%;
+              height: 3px;
+              background: #c92933;
+            }
+          }
+
+          .arrowName {
+            width: 100%;
+            color: #fff;
+            font-weight: lighter;
+            font-size: 3vw;
+            text-align: center;
+          }
+          
         }
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 0 0 40px 0;
-          filter: saturate(1.5);
+        $arrowX: 23%;
+        .upArrow {
+          height: 70px;
+          .arrowWrapp {
+            
+
+            .leftBar {
+              transform: rotate(-45deg) translateX($arrowX);
+            }
+            .rightBar {
+              transform: rotate(45deg) translateX(-$arrowX);
+            }
+          }
         }
 
-        .boothExplain {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          padding: 3%;
-          background: #02020285;
-          border-radius: 25px 0 40px 0;
-          font-size: 5.5vw;
-          color: #fff;
-          letter-spacing: 1px;
-          transition: .4s all;
-
-          span {
-            font-weight: bold;
-            text-shadow: 1px 1px 3px #c92933;
+        .downArrow {
+          .leftBar {
+            transform: rotate(45deg) translateX($arrowX);
+          }
+          .rightBar {
+            transform: rotate(-45deg) translateX(-$arrowX);
           }
         }
 
@@ -130,6 +394,12 @@ header {
       flex-wrap: wrap;
       justify-content: space-between;
       color: rgba(204, 204, 204, 0.74);
+      transition: .4s all;
+
+      &.active {
+        display: none;
+        opacity: 0;
+      }
 
       .boothNames {
         width: 70%;
@@ -192,4 +462,8 @@ footer {
   text-align: center;
   color: rgba(204, 204, 204, 0.74);
   font-size: 3vw;
+
+  &.active {
+    opacity: 0;
+  }
 }

@@ -27,7 +27,14 @@ header h1 {
   position: relative;
   overflow: hidden;
 }
-.contentBoxWrapp .contentWrappInner .boothBox {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp {
+  transition: 0.3s all;
+}
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp.active {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,34 +44,34 @@ header h1 {
   transform-style: preserve-3d;
   transition: 0.45s all;
 }
-.contentBoxWrapp .contentWrappInner .boothBox.left {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox.left {
   transform: rotateY(-75deg) translateX(-130%);
 }
-.contentBoxWrapp .contentWrappInner .boothBox.right {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox.right {
   transform: rotateY(75deg) translateX(130%);
 }
-.contentBoxWrapp .contentWrappInner .boothBox.active {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox.active {
   opacity: 1;
   display: block;
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothNameBox {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothNameBox {
   width: 70%;
   padding-bottom: 5%;
   transition: 0.4s all;
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothNameBox .boothName {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothNameBox .boothName {
   font-size: 9vw;
   text-shadow: 0px 0px 10px #c92933;
   color: #fff;
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothImgBox {
   position: relative;
   width: 100%;
   height: 60vh;
   border-radius: 0 0 40px 0;
   box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.13);
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox .conceptBtn {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothImgBox .conceptBtn {
   position: absolute;
   right: 0.1%;
   top: -10%;
@@ -81,14 +88,14 @@ header h1 {
   font-size: 5vw;
   transition: 0.4s all;
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox img {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothImgBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0 0 40px 0;
   filter: saturate(1.5);
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox .boothExplain {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothImgBox .boothExplain {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -101,9 +108,213 @@ header h1 {
   letter-spacing: 1px;
   transition: 0.4s all;
 }
-.contentBoxWrapp .contentWrappInner .boothBox .boothImgBox .boothExplain span {
+.contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothImgBox .boothExplain span {
   font-weight: bold;
   text-shadow: 1px 1px 3px #c92933;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp {
+  height: 100%;
+  perspective: 400px;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp.active {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transition: 0.4s all;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox.up {
+  transform: rotateX(25deg) translateY(-60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox.down {
+  transform: rotateX(-25deg) translateY(60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox.active {
+  opacity: 1;
+  z-index: 2;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept {
+  width: 100%;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptName {
+  width: 70%;
+  padding-bottom: 5%;
+  transition: 0.4s all;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptName h2 {
+  font-size: 9vw;
+  text-shadow: 0px 0px 10px #c92933;
+  color: #fff;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg {
+  position: relative;
+  width: 80%;
+  height: 60vh;
+  border-radius: 0 0 40px 0;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.178);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .backBtn {
+  position: absolute;
+  right: 5%;
+  top: -8%;
+  width: 30%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c92933;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  color: #c92933;
+  text-shadow: 1px 1px 3px #c92933;
+  font-size: 5vw;
+  transition: 0.4s all;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox {
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+  width: 25%;
+  height: 90%;
+  transition: 0.3s all;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox.active {
+  right: -27%;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample:nth-of-type(1) .circle {
+  box-shadow: 1px 1px 4px rgb(166, 140, 186);
+  background: linear-gradient(43deg, rgb(32, 165, 105) 40%, rgb(166, 140, 186) 60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample:nth-of-type(2) .circle {
+  box-shadow: 1px 1px 4px rgb(21, 137, 87);
+  background: linear-gradient(43deg, rgb(21, 137, 87) 40%, rgb(197, 130, 108) 60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample:nth-of-type(3) .circle {
+  box-shadow: 1px 1px 4px rgb(206, 96, 160);
+  background: linear-gradient(43deg, rgb(206, 96, 160) 40%, rgb(204, 175, 179) 60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample:nth-of-type(4) .circle {
+  box-shadow: 1px 1px 4px rgb(172, 139, 162);
+  background: linear-gradient(43deg, rgb(172, 139, 162) 40%, rgb(21, 177, 227) 60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample:nth-of-type(5) .circle {
+  box-shadow: 1px 1px 4px rgb(224, 104, 76);
+  background: linear-gradient(43deg, rgb(224, 104, 76) 40%, rgb(118, 159, 57) 60%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample .circle {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample .sampleName {
+  margin-top: 10%;
+  color: #fff;
+  font-size: 4vw;
+  transition: 0.4s all;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg .sampleBox ul .itemSample .sampleName.active {
+  text-shadow: 1px 1px 5px #c92933;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  border-radius: 0 0 40px 0;
+  transition: 0.45s all;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptImg img.active {
+  opacity: 1;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptBox .itemConcept .conceptExplain {
+  position: absolute;
+  top: 70vh;
+  left: 0;
+  width: 80%;
+  font-size: 4.5vw;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox {
+  position: absolute;
+  top: 0;
+  right: -1.5%;
+  width: 20%;
+  height: 100%;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow,
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow {
+  width: 100%;
+  height: 100px;
+  z-index: 3;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow .arrowWrapp,
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow .arrowWrapp {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow .arrowWrapp .leftBar,
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow .arrowWrapp .rightBar,
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow .arrowWrapp .leftBar,
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow .arrowWrapp .rightBar {
+  width: 50%;
+  height: 3px;
+  background: #c92933;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow .arrowName,
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow .arrowName {
+  width: 100%;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 3vw;
+  text-align: center;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow {
+  height: 70px;
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow .arrowWrapp .leftBar {
+  transform: rotate(-45deg) translateX(23%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .upArrow .arrowWrapp .rightBar {
+  transform: rotate(45deg) translateX(-23%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow .leftBar {
+  transform: rotate(45deg) translateX(23%);
+}
+.contentBoxWrapp .contentWrappInner .conceptBoxWrapp .conceptSwitchBtnBox .downArrow .rightBar {
+  transform: rotate(-45deg) translateX(-23%);
 }
 .contentBoxWrapp .contentWrappInner .boothBtnBox {
   position: absolute;
@@ -113,6 +324,11 @@ header h1 {
   flex-wrap: wrap;
   justify-content: space-between;
   color: rgba(204, 204, 204, 0.74);
+  transition: 0.4s all;
+}
+.contentBoxWrapp .contentWrappInner .boothBtnBox.active {
+  display: none;
+  opacity: 0;
 }
 .contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames {
   width: 70%;
@@ -157,6 +373,9 @@ footer {
   text-align: center;
   color: rgba(204, 204, 204, 0.74);
   font-size: 3vw;
+}
+footer.active {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
