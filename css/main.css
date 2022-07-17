@@ -57,7 +57,7 @@ header h1 {
 .contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothNameBox {
   width: 70%;
   padding-bottom: 5%;
-  transition: 0.4s all;
+  transition: 0.3s all;
 }
 .contentBoxWrapp .contentWrappInner .boothBoxWrapp .boothBox .boothNameBox .boothName {
   font-size: 9vw;
@@ -115,6 +115,7 @@ header h1 {
 .contentBoxWrapp .contentWrappInner .conceptBoxWrapp {
   height: 100%;
   perspective: 400px;
+  transition: 0.3s all;
 }
 .contentBoxWrapp .contentWrappInner .conceptBoxWrapp.active {
   opacity: 0;
@@ -327,7 +328,6 @@ header h1 {
   transition: 0.4s all;
 }
 .contentBoxWrapp .contentWrappInner .boothBtnBox.active {
-  display: none;
   opacity: 0;
 }
 .contentBoxWrapp .contentWrappInner .boothBtnBox .boothNames {
